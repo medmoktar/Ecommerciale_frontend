@@ -1,0 +1,2 @@
+C:/frontend-gestion-location-main/frontend-gestion-location-main/android/app/.cxx/Debug/1p4q6q3s/x86/CMakeFiles/edit_cache.dir
+C:/frontend-gestion-location-main/frontend-gestion-location-main/android/app/.cxx/Debug/1p4q6q3s/x86/CMakeFiles/rebuild_cache.dir
