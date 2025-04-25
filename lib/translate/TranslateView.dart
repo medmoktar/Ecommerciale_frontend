@@ -7,9 +7,9 @@ class Translateview implements Translations {
           "1": "Maison",
           "2": "Paramètres",
           "3": "Recherche",
-          "4": "Les maisons",
+          "4": "Les Produits",
           "5": "Ajout",
-          "6": "Ajouter maison",
+          "6": "Ajouter Produit",
           "7": "Entrer la localisation",
           "8": "Entrer le prix",
           "9": "Entrer la description",
@@ -17,7 +17,7 @@ class Translateview implements Translations {
           "11": "sauvegarder",
           "12": "Erreur",
           "13": "Veuillez remplir tous les champs",
-          "14": "Localisation : ",
+          "14": "Localisation",
           "15": "Description",
           "16": "Numero telephone : ",
           "17": "Modifier",
@@ -37,14 +37,16 @@ class Translateview implements Translations {
           "31": "sauvegarder",
           "32": "Connecter",
           "33": "nom",
+          "34": "Panier",
+          "35": "Commande"
         },
         "ar": {
           "1": "منزل",
           "2": "إعدادات",
           "3": "بحث",
-          "4": "المنازل",
+          "4": "المنتجات",
           "5": "إضافة",
-          "6": "إضافة منزل",
+          "6": "إضافة منتج",
           "7": "أدخل الموقع",
           "8": "أدخل السعر",
           "9": "أدخل الوصف",
@@ -72,6 +74,8 @@ class Translateview implements Translations {
           "31": "حفظ",
           "32": "تسجيل الدخول",
           "33": "الاسم",
+          "34": "سلة",
+          "35": "طلبات"
         }
       };
 }

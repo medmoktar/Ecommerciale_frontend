@@ -84,8 +84,13 @@ class Ajoutcontroller extends GetxController {
     update();
   }
 
-  sendData(BuildContext context, int id, TextEditingController nom,
-      TextEditingController prix, TextEditingController desc) async {
+  sendData(
+      BuildContext context,
+      int id,
+      TextEditingController nom,
+      TextEditingController prix,
+      TextEditingController quantite,
+      TextEditingController desc) async {
     try {
       var url = Uri.parse("${Url().url}/Api/auth/maison/ajout/$id");
       var req = http.MultipartRequest('POST', url);
@@ -94,6 +99,7 @@ class Ajoutcontroller extends GetxController {
       };
       req.fields['prix'] = prix.text;
       req.fields['nom'] = nom.text;
+      req.fields['quantite'] = quantite.text;
       req.fields['description'] = desc.text;
       req.headers.addAll(headers);
       for (var photo in images) {

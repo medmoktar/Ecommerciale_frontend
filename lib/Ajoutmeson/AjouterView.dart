@@ -13,6 +13,7 @@ class Ajouterview extends StatelessWidget {
   TextEditingController prix = TextEditingController();
   TextEditingController nom = TextEditingController();
   TextEditingController description = TextEditingController();
+  TextEditingController quantite = TextEditingController();
   final Ajoutcontroller controller = Get.put(Ajoutcontroller());
 
   @override
@@ -32,6 +33,10 @@ class Ajouterview extends StatelessWidget {
               input("33".tr, nom, TextInputType.text),
               SizedBox(height: 10),
               input("8".tr, prix, TextInputType.number),
+              SizedBox(
+                height: 10,
+              ),
+              input("quantite", quantite, TextInputType.number),
               SizedBox(height: 10),
               input("9".tr, description, TextInputType.text),
               SizedBox(
@@ -108,7 +113,8 @@ class Ajouterview extends StatelessWidget {
                         btnOkOnPress: () {},
                       ).show();
                     } else {
-                      controller.sendData(context, id, nom, prix, description);
+                      controller.sendData(
+                          context, id, nom, prix, quantite, description);
                       localisation.text = "";
                       prix.text = "";
                       description.text = "";

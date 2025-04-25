@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gestion_locateur/Panier/Panier_controller.dart';
 import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -8,6 +9,7 @@ class Maisondetaille extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     late PageController p = PageController(keepPage: true);
+    late PanierController controller = Get.find();
     late Map<String, dynamic> L = Get.arguments;
     late List image = L['images'];
     return Scaffold(
@@ -65,29 +67,34 @@ class Maisondetaille extends StatelessWidget {
                         )
                       ],
                     ),
-                    IconButton(
-                      onPressed: () {
-                        Map<String, dynamic> lo = {
-                          "A": L['altitude'],
-                          "L": L['longitude']
-                        };
-                        Get.toNamed("localisaton", arguments: lo);
-                      },
-                      icon: Icon(Icons.location_on),
-                      iconSize: 35,
-                      color: Color(0xff7D4FFE),
-                    )
+                    Text(
+                      "${L['prix']} MRU",
+                      style: TextStyle(
+                          color: Colors.grey,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16),
+                    ),
                   ],
                 ),
                 SizedBox(
                   height: 10,
                 ),
-                Text(
-                  "${L['prix']} MRU",
-                  style: TextStyle(
-                      color: Colors.grey,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16),
+                Divider(),
+                Row(
+                  children: [
+                    Text(
+                      "quantite:",
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                    ),
+                    Text(
+                      " ${L['quantite'].toInt()} ",
+                      style: TextStyle(
+                          color: Colors.grey,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16),
+                    ),
+                  ],
                 ),
                 SizedBox(
                   height: 10,
@@ -127,6 +134,24 @@ class Maisondetaille extends StatelessWidget {
                 SizedBox(
                   height: 50,
                 ),
+                Container(
+                  height: 50,
+                  width: double.infinity,
+                  child: ElevatedButton(
+                      onPressed: () {
+                        controller.panier.add(L);
+                        controller.commande
+                            .add({"maisonId": L['id'], "quantite": 1});
+                        Get.snackbar("", "cette produit est ajouter au panier");
+                        controller.misajour();
+                      },
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Color(0xff7D4FFE),
+                          foregroundColor: Colors.white,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10))),
+                      child: Text("Ajouter au Panier")),
+                )
               ],
             ),
           )

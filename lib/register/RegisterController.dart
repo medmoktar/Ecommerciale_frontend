@@ -12,26 +12,27 @@ class Registercontroller extends GetxController {
   register(BuildContext context, TextEditingController email,
       TextEditingController password, TextEditingController tel) async {
     Map<String, Object> body = {
-      "email": email.text,
+      "nom": email.text,
       "tel": tel.text,
       "password": password.text
     };
     final Map<String, String> headers = {'Content-Type': 'application/json'};
-    var rep = await http.post(Uri.parse("${Url().url}/Api/auth/register"),
+    var rep = await http.post(Uri.parse("${Url().url}/client/add"),
         body: jsonEncode(body), headers: headers);
     l = true;
     update();
-    if (rep.statusCode != 200) {
+    if (rep.statusCode == 400) {
       AwesomeDialog(
         context: context,
         dialogType: DialogType.error,
         animType: AnimType.rightSlide,
         title: 'Error',
-        desc: "cette email a d'èja pris",
+        desc: "cette numero de telephone a d'èja pris",
         btnOkOnPress: () {},
       ).show();
     } else {
       AwesomeDialog(
+        dismissOnTouchOutside: false,
         context: context,
         dialogType: DialogType.success,
         animType: AnimType.rightSlide,

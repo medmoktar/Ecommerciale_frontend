@@ -76,29 +76,34 @@ class Usermaisondetaille extends StatelessWidget {
                               )
                             ],
                           ),
-                          IconButton(
-                            onPressed: () {
-                              Map<String, dynamic> lo = {
-                                "A": c.m['altitude'],
-                                "L": c.m['longitude']
-                              };
-                              Get.toNamed("localisaton", arguments: lo);
-                            },
-                            icon: Icon(Icons.location_on),
-                            iconSize: 35,
-                            color: Color(0xff7D4FFE),
+                          Text(
+                            "${c.m['prix']} MRU",
+                            style: TextStyle(
+                                color: Colors.grey,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16),
                           ),
                         ],
                       ),
                       SizedBox(
                         height: 10,
                       ),
-                      Text(
-                        "${c.m['prix']} MRU",
-                        style: TextStyle(
-                            color: Colors.grey,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16),
+                      Divider(),
+                      Row(
+                        children: [
+                          Text(
+                            "quantite:",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 18),
+                          ),
+                          Text(
+                            " ${c.m['quantite'].toInt()} ",
+                            style: TextStyle(
+                                color: Colors.grey,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16),
+                          ),
+                        ],
                       ),
                       SizedBox(
                         height: 10,

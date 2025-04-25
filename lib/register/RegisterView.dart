@@ -45,8 +45,8 @@ class Registerview extends StatelessWidget {
                     decoration: InputDecoration(
                         filled: true,
                         fillColor: Colors.white10,
-                        labelText: "23".tr,
-                        hintText: "24".tr,
+                        labelText: "33".tr,
+                        hintText: "33".tr,
                         hintStyle: TextStyle(color: Colors.grey),
                         border: OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.transparent),

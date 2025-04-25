@@ -1,3 +1,4 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:gestion_locateur/translate/TranslationContrller.dart';
 import 'package:get/get.dart';
@@ -48,14 +49,24 @@ class Settingview extends StatelessWidget {
             ),
             ElevatedButton(
                 onPressed: () {
-                  Get.toNamed("/AuthenticationView");
+                  AwesomeDialog(
+                          context: context,
+                          dialogType: DialogType.question,
+                          animType: AnimType.rightSlide,
+                          title: 'Tu est sur',
+                          desc: "Tu veut déconnecte",
+                          btnOkOnPress: () {
+                            Get.offAllNamed("/");
+                          },
+                          btnCancelOnPress: () {})
+                      .show();
                 },
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Color(0xFFC49FFF),
                     foregroundColor: Colors.white,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10))),
-                child: Text("32".tr))
+                child: Text("Logout"))
           ],
         ),
       ),

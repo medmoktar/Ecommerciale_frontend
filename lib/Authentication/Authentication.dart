@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gestion_locateur/login/LoginView.dart';
+import 'package:gestion_locateur/loginClient/LoginClient_view.dart';
 import 'package:gestion_locateur/register/RegisterView.dart';
 import 'package:get/get.dart';
 
@@ -53,7 +54,7 @@ class AuthenticationView extends StatelessWidget {
               Expanded(
                 child: TabBarView(
                   children: [
-                    SingleChildScrollView(child: Loginview()),
+                    SingleChildScrollView(child: LoginclientView()),
                     SingleChildScrollView(child: Registerview()),
                   ],
                 ),

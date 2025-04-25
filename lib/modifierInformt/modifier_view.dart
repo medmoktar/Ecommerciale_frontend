@@ -22,7 +22,8 @@ class ModifierView extends StatelessWidget {
       ),
       appBar: AppBar(
         backgroundColor: Color(0xffC49FFF),
-        title: Text("6".tr, style: TextStyle(fontWeight: FontWeight.bold)),
+        title: Text("Modifier mon information",
+            style: TextStyle(fontWeight: FontWeight.bold)),
       ),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
